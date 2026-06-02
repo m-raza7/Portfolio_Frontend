@@ -90,8 +90,23 @@ export function Contact() {
       return;
     }
 
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      toast.error("EmailJS is not configured");
+    // if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    //   toast.error("EmailJS is not configured");
+    //   return;
+    // }
+
+    if (!SERVICE_ID) {
+      toast.error("Missing EmailJS Service ID");
+      return;
+    }
+
+    if (!TEMPLATE_ID) {
+      toast.error("Missing EmailJS Template ID");
+      return;
+    }
+
+    if (!PUBLIC_KEY) {
+      toast.error("Missing EmailJS Public Key");
       return;
     }
 
