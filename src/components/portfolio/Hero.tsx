@@ -4,7 +4,10 @@ import avatar from "@/assets/avatar.jpg";
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-28">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center overflow-hidden pt-28"
+    >
       {/* animated blobs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="animate-blob absolute -left-20 top-20 h-72 w-72 rounded-full bg-[var(--neon-pink)] opacity-40 blur-3xl" />
@@ -99,7 +102,8 @@ export function Hero() {
             />
           </div>
           <div className="glass animate-float absolute -bottom-2 -left-2 rounded-2xl px-4 py-2 text-xs font-mono [animation-delay:-3s]">
-            <span className="text-[var(--neon-lime)]">{"</>"}</span> shipping daily
+            <span className="text-[var(--neon-lime)]">{"</>"}</span> shipping
+            daily
           </div>
         </motion.div>
       </div>
