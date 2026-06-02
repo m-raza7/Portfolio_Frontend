@@ -96,16 +96,20 @@ export function Contact() {
     // }
 
     if (!SERVICE_ID) {
+      console.log(SERVICE_ID);
       toast.error("Missing EmailJS Service ID");
       return;
     }
 
     if (!TEMPLATE_ID) {
+      console.log(TEMPLATE_ID);
+
       toast.error("Missing EmailJS Template ID");
       return;
     }
 
     if (!PUBLIC_KEY) {
+      console.log(PUBLIC_KEY);
       toast.error("Missing EmailJS Public Key");
       return;
     }
