@@ -6,23 +6,26 @@ const projects = [
   {
     title: "Brightspeed",
     desc: "Designed and developed modern web interfaces focused on billing and invoice management with responsive layouts and intuitive workflows.",
-    tags: ["React", "UI/UX", "Responsive"],
+    tags: ["Frontend", "Angular", "Figma", "UI/UX", "Responsive"],
     href: "https://www.brightspeed.com",
-    gradient: "linear-gradient(135deg, oklch(0.72 0.25 340), oklch(0.62 0.25 295))",
+    gradient:
+      "linear-gradient(135deg, oklch(0.72 0.25 340), oklch(0.62 0.25 295))",
   },
   {
     title: "Codesoul Solutions",
     desc: "Created intuitive and visually appealing UIs for multiple web applications, improving usability and responsiveness across the board.",
-    tags: ["Next.js", "Figma", "Frontend"],
+    tags: ["Frontend", "Angular", "Figma", "Canva", "UI/UX", "Responsive"],
     href: "https://www.codesoul.solutions",
-    gradient: "linear-gradient(135deg, oklch(0.82 0.18 200), oklch(0.85 0.22 140))",
+    gradient:
+      "linear-gradient(135deg, oklch(0.82 0.18 200), oklch(0.85 0.22 140))",
   },
   {
     title: "HICKOKU",
     desc: "Built responsive and scalable web applications as Frontend Developer — developed reusable components and integrated features efficiently.",
     tags: ["React", "Components", "Scalable"],
     href: "https://www.hickoku.com",
-    gradient: "linear-gradient(135deg, oklch(0.9 0.2 95), oklch(0.72 0.25 340))",
+    gradient:
+      "linear-gradient(135deg, oklch(0.9 0.2 95), oklch(0.72 0.25 340))",
   },
 ];
 
@@ -31,7 +34,11 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Projects"
-      title={<>Selected <span className="text-gradient">work</span></>}
+      title={
+        <>
+          Selected <span className="text-gradient">work</span>
+        </>
+      }
       subtitle="A few products I've designed and built end-to-end."
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -58,13 +65,24 @@ export function Projects() {
               <div className="flex items-start justify-between gap-4">
                 <h3 className="text-xl font-semibold">{p.title}</h3>
                 <div className="flex gap-2 text-muted-foreground">
-                  <a href={p.href} target="_blank" rel="noreferrer" aria-label="Live" className="transition hover:text-foreground"><ExternalLink className="h-4 w-4" /></a>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Live"
+                    className="transition hover:text-foreground"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
                 </div>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
-                  <span key={t} className="rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground">
+                  <span
+                    key={t}
+                    className="rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground"
+                  >
                     {t}
                   </span>
                 ))}
