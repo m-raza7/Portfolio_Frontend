@@ -10,7 +10,7 @@ import { Footer } from "./components/portfolio/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen scroll-smooth text-foreground">
       <Toaster position="top-right" theme="dark" richColors />
       <Navbar />
       <main>

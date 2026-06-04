@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { Download, ArrowRight, Sparkles } from "lucide-react";
-import avatar from "@/assets/avatar.jpg";
+// import avatar from "@/assets/avatar.jpg";
+import mrImage from "@/assets/Mr_Image.jpeg";
+import { Typewriter } from "react-simple-typewriter";
 
 export function Hero() {
   return (
@@ -9,7 +11,7 @@ export function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden pt-28"
     >
       {/* animated blobs */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0 z-10">
         <div className="animate-blob absolute -left-20 top-20 h-72 w-72 rounded-full bg-[var(--neon-pink)] opacity-40 blur-3xl" />
         <div className="animate-blob absolute right-0 top-40 h-80 w-80 rounded-full bg-[var(--neon-cyan)] opacity-30 blur-3xl [animation-delay:-6s]" />
         <div className="animate-blob absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[var(--neon-yellow)] opacity-30 blur-3xl [animation-delay:-12s]" />
@@ -34,7 +36,23 @@ export function Hero() {
             className="text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl"
           >
             Hi, I'm <span className="text-gradient block">Mustafeez Raza</span>
-            <span className="text-sun">Software Developer</span>
+            <span className="text-[0.7em] text-muted-foreground">
+              <Typewriter
+                words={[
+                  "Mern-stack Developer",
+                  "Frontend Developer",
+                  "React Developer",
+                  "UI/UX Designer",
+                  "UI/UX Developer",
+                ]}
+                loop={0} // 0 = infinite
+                cursor
+                cursorStyle="</>"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
           </motion.h1>
 
           <motion.p
@@ -73,7 +91,7 @@ export function Hero() {
           <div className="mt-10 flex gap-8 text-sm">
             {[
               { k: "1.5+", v: "Years" },
-              { k: "3+", v: "Projects" },
+              { k: "5+", v: "Projects" },
               { k: "2", v: "Companies" },
             ].map((s) => (
               <div key={s.v}>
@@ -93,7 +111,7 @@ export function Hero() {
           <div className="bg-aurora animate-spin-slow absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] opacity-90 blur-md" />
           <div className="animate-float absolute inset-3 overflow-hidden rounded-[40%_60%_70%_30%/40%_50%_60%_50%] shadow-glow">
             <img
-              src={avatar}
+              src={mrImage}
               alt="Mustafeez Raza"
               width={768}
               height={768}

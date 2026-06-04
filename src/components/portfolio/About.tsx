@@ -1,12 +1,58 @@
 import { motion } from "motion/react";
 import { Section } from "./Section";
-import { Code2, Rocket, Heart, Coffee } from "lucide-react";
+import {
+  Code2,
+  Rocket,
+  Heart,
+  Coffee,
+  Users,
+  ShieldCheck,
+  Lightbulb,
+} from "lucide-react";
 
 const highlights = [
-  { icon: Code2, color: "var(--neon-pink)", title: "Clean Code", desc: "Maintainable, tested, and documented." },
-  { icon: Rocket, color: "var(--neon-cyan)", title: "Performance", desc: "Fast loads, smooth 60fps interactions." },
-  { icon: Heart, color: "var(--neon-yellow)", title: "Design Eye", desc: "Color, type and motion done right." },
-  { icon: Coffee, color: "var(--neon-lime)", title: "Always Learning", desc: "Curious, kind, and collaborative." },
+  {
+    icon: Code2,
+    color: "var(--neon-pink)",
+    title: "Clean Code",
+    desc: "Maintainable, tested, and documented.",
+  },
+  {
+    icon: Rocket,
+    color: "var(--neon-cyan)",
+    title: "Performance",
+    desc: "Fast loads, smooth 60fps interactions.",
+  },
+  {
+    icon: Heart,
+    color: "var(--neon-yellow)",
+    title: "Design Eye",
+    desc: "Color, type and motion done right.",
+  },
+  {
+    icon: Coffee,
+    color: "var(--neon-lime)",
+    title: "Always Learning",
+    desc: "Curious, kind, and collaborative.",
+  },
+  {
+    icon: ShieldCheck,
+    color: "var(--neon-violet)",
+    title: "Best Practices",
+    desc: "Scalable architecture, security, and code quality.",
+  },
+  {
+    icon: Users,
+    color: "var(--neon-cyan)",
+    title: "Team Collaboration",
+    desc: "Effective communication and seamless teamwork.",
+  },
+  {
+    icon: Lightbulb,
+    color: "var(--neon-yellow)",
+    title: "Problem Solving",
+    desc: "Turning complex challenges into simple, effective solutions.",
+  },
 ];
 
 export function About() {
@@ -14,7 +60,11 @@ export function About() {
     <Section
       id="about"
       eyebrow="About"
-      title={<>A bit <span className="text-gradient">about me</span></>}
+      title={
+        <>
+          A bit <span className="text-gradient">about me</span>
+        </>
+      }
       subtitle="I'm a Software Developer based in Kamptee, Nagpur. I build scalable web apps, mentor students, and craft thoughtful UI/UX."
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -30,7 +80,9 @@ export function About() {
           >
             <div
               className="mb-4 grid h-12 w-12 place-items-center rounded-2xl"
-              style={{ background: `color-mix(in oklab, ${h.color} 25%, transparent)` }}
+              style={{
+                background: `color-mix(in oklab, ${h.color} 25%, transparent)`,
+              }}
             >
               <h.icon className="h-6 w-6" style={{ color: h.color }} />
             </div>

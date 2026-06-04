@@ -27,6 +27,22 @@ const projects = [
     gradient:
       "linear-gradient(135deg, oklch(0.9 0.2 95), oklch(0.72 0.25 340))",
   },
+  {
+    title: "Jhumka Planet",
+    desc: "Developed a modern e-commerce platform for jewelry products with responsive design, product listings, category management, and an enhanced shopping experience.",
+    tags: ["React", "E-Commerce", "Frontend", "Responsive", "UI/UX"],
+    href: "https://www.jhumkaplanet.com",
+    gradient:
+      "linear-gradient(135deg, oklch(0.78 0.22 30), oklch(0.68 0.24 10))",
+  },
+  {
+    title: "Student Self Reflection",
+    desc: "Built a student self-reflection platform that helps students track learning progress, submit reflections, and monitor personal growth through an interactive dashboard.",
+    tags: ["React", "Dashboard", "Frontend", "Education", "UI/UX"],
+    href: "#",
+    gradient:
+      "linear-gradient(135deg, oklch(0.80 0.18 260), oklch(0.65 0.22 220))",
+  },
 ];
 
 export function Projects() {
