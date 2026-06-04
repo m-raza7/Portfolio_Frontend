@@ -22,7 +22,7 @@ const projects = [
   {
     title: "HICKOKU",
     desc: "Built responsive and scalable web applications as Frontend Developer — developed reusable components and integrated features efficiently.",
-    tags: ["React", "Components", "Scalable"],
+    tags: ["Frontend", "Next.js", "React", "Components", "Scalable"],
     href: "https://www.hickoku.com",
     gradient:
       "linear-gradient(135deg, oklch(0.9 0.2 95), oklch(0.72 0.25 340))",
