@@ -212,7 +212,7 @@ export function Contact() {
 
     try {
       // 1. Save to MongoDB via Express API
-      const response = await fetch(`${API_URL}/api/contact`, {
+      const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
