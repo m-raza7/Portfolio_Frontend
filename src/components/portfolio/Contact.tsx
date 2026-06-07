@@ -16,6 +16,7 @@ import { toast } from "sonner";
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+const API_URL = import.meta.env.VITE_API_URL;
 
 type FormState = {
   name: string;
@@ -211,7 +212,7 @@ export function Contact() {
 
     try {
       // 1. Save to MongoDB via Express API
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
