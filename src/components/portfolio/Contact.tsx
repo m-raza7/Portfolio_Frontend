@@ -16,7 +16,7 @@ import { toast } from "sonner";
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL as string;
 
 type FormState = {
   name: string;
@@ -80,123 +80,6 @@ export function Contact() {
       }
     };
 
-  // const onSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   const v = validate(form);
-  //   setErrors(v);
-
-  //   if (Object.keys(v).length > 0) {
-  //     toast.error("Please fix the highlighted fields.");
-  //     return;
-  //   }
-
-  //   if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-  //     toast.error("EmailJS is not configured");
-  //     return;
-  //   }
-
-  //   // if (!SERVICE_ID) {
-  //   //   console.log(SERVICE_ID);
-  //   //   toast.error("Missing EmailJS Service ID");
-  //   //   return;
-  //   // }
-
-  //   // if (!TEMPLATE_ID) {
-  //   //   console.log(TEMPLATE_ID);
-
-  //   //   toast.error("Missing EmailJS Template ID");
-  //   //   return;
-  //   // }
-
-  //   // if (!PUBLIC_KEY) {
-  //   //   console.log(PUBLIC_KEY);
-  //   //   toast.error("Missing EmailJS Public Key");
-  //   //   return;
-  //   // }
-
-  //   setLoading(true);
-
-  //   // try {
-  //   //   await emailjs.send(
-  //   //     SERVICE_ID,
-  //   //     TEMPLATE_ID,
-  //   //     {
-  //   //       from_name: form.name,
-  //   //       from_email: form.email,
-  //   //       subject: form.subject,
-  //   //       message: form.message,
-  //   //       reply_to: form.email,
-  //   //     },
-  //   //     {
-  //   //       publicKey: PUBLIC_KEY,
-  //   //     },
-  //   //   );
-
-  //   //   toast.success("Message sent successfully!");
-  //   //   setForm(initial);
-  //   // } catch (err) {
-  //   //   console.error(err);
-  //   //   toast.error("Failed to send. Please try again.");
-  //   // } finally {
-  //   //   setLoading(false);
-  //   // }
-  //   const onSubmit = async (e: React.FormEvent) => {
-  //     e.preventDefault();
-
-  //     const v = validate(form);
-  //     setErrors(v);
-
-  //     if (Object.keys(v).length > 0) {
-  //       toast.error("Please fix the highlighted fields.");
-  //       return;
-  //     }
-
-  //     setLoading(true);
-
-  //     try {
-  //       // 1. Save to MongoDB via Express API
-  //       const response = await fetch("http://localhost:5000/api/contact", {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(form),
-  //       });
-
-  //       if (!response.ok) {
-  //         throw new Error("Failed to save contact");
-  //       }
-
-  //       // 2. Send EmailJS notification (optional)
-  //       if (SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
-  //         await emailjs.send(
-  //           SERVICE_ID,
-  //           TEMPLATE_ID,
-  //           {
-  //             from_name: form.name,
-  //             from_email: form.email,
-  //             subject: form.subject,
-  //             message: form.message,
-  //             reply_to: form.email,
-  //           },
-  //           {
-  //             publicKey: PUBLIC_KEY,
-  //           },
-  //         );
-  //       }
-
-  //       toast.success("Message sent successfully!");
-  //       setForm(initial);
-  //     } catch (error) {
-  //       console.error(error);
-  //       toast.error("Failed to send message");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  // };
-
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -208,45 +91,34 @@ export function Contact() {
       return;
     }
 
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      toast.error("EmailJS is not configured");
+      return;
+    }
+
     setLoading(true);
 
     try {
-      // 1. Save to MongoDB via Express API
-      const response = await fetch(`${API_URL}/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+          reply_to: form.email,
         },
-        body: JSON.stringify(form),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to save contact");
-      }
-
-      // 2. Send EmailJS notification (optional)
-      if (SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
-        await emailjs.send(
-          SERVICE_ID,
-          TEMPLATE_ID,
-          {
-            from_name: form.name,
-            from_email: form.email,
-            subject: form.subject,
-            message: form.message,
-            reply_to: form.email,
-          },
-          {
-            publicKey: PUBLIC_KEY,
-          },
-        );
-      }
+        {
+          publicKey: PUBLIC_KEY,
+        },
+      );
 
       toast.success("Message sent successfully!");
       setForm(initial);
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to send message");
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to send. Please try again.");
     } finally {
       setLoading(false);
     }
