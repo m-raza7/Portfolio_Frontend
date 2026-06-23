@@ -8,6 +8,7 @@ import {
   Users,
   ShieldCheck,
   Lightbulb,
+  Globe,
 } from "lucide-react";
 
 const highlights = [
@@ -52,6 +53,12 @@ const highlights = [
     color: "var(--neon-yellow)",
     title: "Problem Solving",
     desc: "Turning complex challenges into simple, effective solutions.",
+  },
+  {
+    icon: Globe,
+    color: "var(--neon-cyan)",
+    title: "Full Stack Development",
+    desc: "Building complete web applications from UI to backend APIs.",
   },
 ];
 
